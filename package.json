@@ -1,0 +1,46 @@
+{
+  "name": "react-app-skeleton",
+  "version": "1.0.0",
+  "description": "React App Skeleton",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode development && node index.js",
+    "server": "node index.js",
+    "start": "webpack-dev-server --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulkadukar/react-app-skeleton.git"
+  },
+  "author": "Rahul Kadukar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahulkadukar/react-app-skeleton/issues"
+  },
+  "homepage": "https://github.com/rahulkadukar/react-app-skeleton#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.3.3",
+    "@material-ui/styles": "^4.3.3",
+    "bunyan": "^1.8.12",
+    "bunyan-middleware": "^1.0.0",
+    "http-server": "^0.11.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1",
+    "recharts": "^1.7.1"
+  }
+}
