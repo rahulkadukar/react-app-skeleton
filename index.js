@@ -3,19 +3,18 @@ const bunyanMiddleware = require('bunyan-middleware')
 const express = require('express');
 const path = require('path');
 
-
 const app = express();
 const bunyanOpts = {
-    name: 'myapp',
-streams: [
-{
-    level: 'debug',
-    stream: process.stdout    // log INFO and above to stdout
-},
-{
-    level: 'info',
-    path: './logs/logs.json'  // log ERROR and above to a file
-}
+  name: 'react-app-skeleton',
+  streams: [
+    {
+      level: 'debug',
+      stream: process.stdout    // log INFO and above to stdout
+    },
+    {
+      level: 'info',
+      path: './logs/logs.json'  // log ERROR and above to a file
+    }
   ]
 };
 

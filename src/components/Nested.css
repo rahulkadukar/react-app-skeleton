@@ -1,0 +1,12 @@
+.inner-div {
+  background: red;
+  color: greenyellow;
+  padding: 20px;
+}
+
+.inner-div-deus {
+  background: rebeccapurple;
+  color: greenyellow;
+  padding: 20px;
+  width: 200px;
+}
