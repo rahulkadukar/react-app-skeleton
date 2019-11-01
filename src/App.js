@@ -73,7 +73,7 @@ class App extends Component {
     this._darkMode = this._darkMode.bind(this)
 
     this.state = {
-      darkMode: false
+      darkMode: true
     }
   }
 
@@ -92,7 +92,7 @@ class App extends Component {
               <Item><Link to="/">Home</Link></Item>
               <Item><Link to="/about">About</Link></Item>
             </List>
-            <ItemRight><Toggle callBack={(x) => {this._darkMode(x)}} /></ItemRight>
+            <ItemRight><Toggle darkMode={this.state.darkMode} callBack={(x) => {this._darkMode(x)}} /></ItemRight>
           </NavBar>
           <Switch>
             <Route exact path="/"><Index darkMode={this.state.darkMode} /></Route>

@@ -38,7 +38,7 @@ class Toggle extends Component {
     super(props)
     this._toggle = this._toggle.bind(this)
     this.state = {
-      darkMode: false
+      darkMode: this?.props?.darkMode ? true : false
     }
   }
 
