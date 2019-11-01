@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import P from '../components/P'
 
-class Home extends Component {
+class About extends Component {
   render() {
     return (
       <div className="container">
-        <P darkMode={this.props.darkMode}>Home</P>
+        <P darkMode={this.props.darkMode}>About</P>
       </div>
     );
   }
 }
 
-export default Home
+export default About
