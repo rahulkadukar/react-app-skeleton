@@ -1,4 +1,5 @@
-import React, { Component} from "react"
+import React, { Component} from 'react'
+import ThemeContext from './components/ThemeContext'
 import {
   Link as ReactRouterLink,
   BrowserRouter as Router,
@@ -15,14 +16,14 @@ import Index from './pages/Index'
 import Toggle from './components/Toggle'
 
 const Main = styled.div`
-  background-color: ${props => props.darkMode ? '#303030' : '#FFFFFF'};
+  background-color: ${props => props.theme === 'dark' ? '#303030' : '#FFFFFF'};
   transition: background-color 1s ease-in-out;
   min-height: 100%;
   min-width: 100%;
 `
 
 const NavBar = styled.nav`
-  background-color: ${props => props.darkMode ? '#040404' : '#EE4E02'};
+  background-color: ${props => props.theme === 'dark' ? '#040404' : '#EE4E02'};
   transition: background-color 1s ease-in-out;
   display: flex;
   flex-direction: row;
@@ -64,49 +65,34 @@ const Text = styled.p`
   padding: 10px;
   font-size: 20px;
   display: block;
-  color: black;
+  transition: color 0.5s ease-in-out;
+  color: ${props => props.theme === 'dark' ? '#ECEFF1' : 'black'};
 `
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this._darkMode = this._darkMode.bind(this)
-
-    this.state = {
-      darkMode: true
-    }
-  }
-
-  _darkMode(x) {
-    this.setState({
-      darkMode: x
-    })
-  }
-
-  render() {
-    return (
+const App = (props) => {
+  return <ThemeContext.Consumer>
+    { (value) =>
       <Router>
-        <Main darkMode={this.state.darkMode}>
-          <NavBar darkMode={this.state.darkMode}>
+        <Main theme={value.theme}>
+          <NavBar theme={value.theme}>
             <List>
               <Item><Link to="/">Home</Link></Item>
               <Item><Link to="/about">About</Link></Item>
             </List>
-            <ItemRight><Toggle darkMode={this.state.darkMode} callBack={(x) => {this._darkMode(x)}} /></ItemRight>
+            <ItemRight><Toggle callBack={(x) => {this._darkMode(x)}} /></ItemRight>
           </NavBar>
           <Switch>
-            <Route exact path="/"><Index darkMode={this.state.darkMode} /></Route>
-            <Route exact path="/about"><About darkMode={this.state.darkMode} /></Route>
-            <Route path="*"><Home darkMode={this.state.darkMode} /></Route>
-            <App/>
+            <Route exact path="/"><Index /></Route>
+            <Route exact path="/about"><About /></Route>
+            <Route path="*"><Home /></Route>
           </Switch>
           <Footer>
-            <Text>&copy;</Text>
+            <Text theme={value.theme}>&copy;</Text>
           </Footer>
         </Main>
       </Router>
-    );
-  }
+    }
+  </ThemeContext.Consumer>
 }
 
-export default App;
+export default App

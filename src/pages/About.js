@@ -5,7 +5,7 @@ class About extends Component {
   render() {
     return (
       <div className="container">
-        <P darkMode={this.props.darkMode}>About</P>
+        <P>About</P>
       </div>
     );
   }

@@ -5,7 +5,7 @@ class Index extends Component {
   render() {
     return (
       <div className="container">
-        <P darkMode={this.props.darkMode}>Index</P>
+        <P>Index</P>
       </div>
     );
   }
