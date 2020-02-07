@@ -1,4 +1,14 @@
 const bunyan = require('bunyan')
+const fs = require('fs')
+const logPath = './logs'
+
+if (!(fs.existsSync(logPath))) {
+  try {
+    fs.mkdirSync(logPath)
+  } catch (excp) {
+    console.log(excp.message)
+  }
+}
 
 const bunyanOpts = {
   name: 'network',
