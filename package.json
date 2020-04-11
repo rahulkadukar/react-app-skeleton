@@ -36,7 +36,6 @@
   "dependencies": {
     "bunyan": "^1.8.12",
     "bunyan-middleware": "^1.0.0",
-    "http-server": "^0.12.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
