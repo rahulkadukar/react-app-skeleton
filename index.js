@@ -1,4 +1,5 @@
 const bunyanMiddleware = require('bunyan-middleware')
+const compression = require('compression')
 const express = require('express')
 const fs = require('fs')
 const path = require('path')
@@ -15,6 +16,7 @@ if (!(fs.existsSync(logPath))) {
 
 const app = express();
 
+app.use(compression())
 app.use(
   bunyanMiddleware({
     headerName: 'X-Request-Id',

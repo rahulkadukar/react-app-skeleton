@@ -29,6 +29,7 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^1.0.1",
     "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^3.0.1",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
@@ -36,6 +37,7 @@
   "dependencies": {
     "bunyan": "^1.8.12",
     "bunyan-middleware": "^1.0.0",
+    "compression": "^1.7.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",

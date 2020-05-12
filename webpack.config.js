@@ -1,10 +1,11 @@
 const path = require("path");
 const webpack = require("webpack");
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   entry: "./src/index.js",
   mode: "development",
-  devtool: 'cheap-eval-source-map',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -20,16 +21,14 @@ module.exports = {
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
   output: {
     path: path.resolve(__dirname, "public/dist/"),
     publicPath: "public/dist/",
     filename: "bundle.js"
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "public/"),
-    port: 4000,
-    publicPath: `http://192.168.0.120:4000/dist/`,
-    hotOnly: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };
